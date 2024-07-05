@@ -19,7 +19,7 @@ BUILDPACK_DIR=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
  echo "-----> Extracting Quarto"
 # Extract files in to directory a quarto directory
 mkdir -p "${DEPS_DIR}/${DEPS_IDX}/quarto"
-tar -C "${DEPS_DIR}/${DEPS_IDX}/quarto" -xvzf "${CACHE_DIR}/quarto-1.5.53-linux-arm64.tar.gz"
+tar -C "${DEPS_DIR}/${DEPS_IDX}/quarto" -xvzf "${CACHE_DIR}/quarto-1.5.53-linux-amd64.tar.gz"
 
 #cp "${CACHE_DIR}/quarto-1.5.53-linux-amd64.tar.gz" "${DEPS_DIR}/${DEPS_IDX}/quarto"
 chmod +x "${DEPS_DIR}/${DEPS_IDX}/quarto/quarto-1.5.53/bin/quarto"
