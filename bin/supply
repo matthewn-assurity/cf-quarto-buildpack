@@ -22,8 +22,8 @@ else
 
     # mv "${SUPERCRONIC_FILE}" "${CACHE_DIR}/${SUPERCRONIC_FILE}"
     #mv "quarto-1.5.53-linux-amd64.deb" "${CACHE_DIR}/quarto-1.5.53-linux-amd64.deb"
-
+    echo "-----> Installing Quarto"
     # execute the installation
 	#sudo dpkg -i quarto-1.5.53-linux-amd64.deb
-    sudo apt install ./quarto-1.5.53-linux-amd64.deb
+    apt install ./quarto-1.5.53-linux-amd64.deb
 fi
