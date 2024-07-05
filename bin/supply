@@ -24,5 +24,6 @@ else
     #mv "quarto-1.5.53-linux-amd64.deb" "${CACHE_DIR}/quarto-1.5.53-linux-amd64.deb"
 
     # execute the installation
-	sudo dpkg -i quarto-1.5.53-linux-amd64.deb
+	#sudo dpkg -i quarto-1.5.53-linux-amd64.deb
+    sudo apt install ./quarto-1.5.53-linux-amd64.deb
 fi
