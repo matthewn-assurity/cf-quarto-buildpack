@@ -13,16 +13,16 @@ BUILDPACK_DIR=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
 
 if [ -f "${CACHE_DIR}"/"quarto-1.5.53-linux-amd64.deb" ]
 then
-    echo "-----> Using Supercronic from cache"
+    echo "-----> Using Quarto from cache"
 else
     echo "-----> Downloading Quarto"
     #https://github.com/quarto-dev/quarto-cli/releases/download/v1.5.53/quarto-1.5.53-linux-amd64.deb
     # curl -fsSLO "${QUARTO_URL}"
-    curl -fsSLO "https://github.com/quarto-dev/quarto-cli/releases/download/v1.5.53/quarto-1.5.53-linux-amd64.deb"
+    curl -sLO https://github.com/quarto-dev/quarto-cli/releases/download/v1.5.53/quarto-1.5.53-linux-amd64.deb
 
     # mv "${SUPERCRONIC_FILE}" "${CACHE_DIR}/${SUPERCRONIC_FILE}"
-    mv "quarto-1.5.53-linux-amd64.deb" "${CACHE_DIR}/quarto-1.5.53-linux-amd64.deb"
+    #mv "quarto-1.5.53-linux-amd64.deb" "${CACHE_DIR}/quarto-1.5.53-linux-amd64.deb"
 
     # execute the installation
-	sudo apt install ./quarto-1.5.53-linux-amd64.deb
+	sudo dpkg -i quarto-1.5.53-linux-amd64.deb
 fi
