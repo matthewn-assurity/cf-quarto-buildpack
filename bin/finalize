@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# https://www.howtogeek.com/782514/how-to-use-set-and-pipefail-in-bash-scripts-on-linux/
+set -euo pipefail 
+
+# https://docs.cloudfoundry.org/buildpacks/understand-buildpacks.html
+BUILD_DIR="${1}"
+CACHE_DIR="${2}"
+DEPS_DIR="${3}"
+DEPS_IDX="${4}"
+
+BUILDPACK_DIR=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
+
+
+
+# https://quarto.org/docs/download/tarball.html
+
+
+echo "-----> Extracting Quarto"
+# Extract files in to directory a quarto directory
+mkdir -p "${DEPS_DIR}/${DEPS_IDX}/quarto"
+tar -C "${DEPS_DIR}/${DEPS_IDX}/quarto" -xvzf quarto-1.5.53-linux-amd64.tar.gz
+
+# cp "${CACHE_DIR}/quarto-1.5.53-linux-amd64.tar.gz" "${DEPS_DIR}/${DEPS_IDX}/quarto"
+chmod +x "${DEPS_DIR}/${DEPS_IDX}/quarto/quarto-1.5.52/bin/quarto"
+
+
