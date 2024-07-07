@@ -14,6 +14,16 @@ source ${BUILDPACK_DIR}/parameters.sh
 if [ -f "${CACHE_DIR}"/"quarto-1.5.53-linux-amd64.tar.gz" ]
 then
     echo "-----> Using Quarto from cache"
+
+    # https://quarto.org/docs/download/tarball.html
+    echo "-----> Extracting Quarto"
+    # Extract files in to directory a quarto directory
+    mkdir -p "${QUARTO_DIR}"
+    tar -C "${QUARTO_DIR}" -xvzf "${CACHE_DIR}/${QUARTO_FILE}"
+
+    chmod +x "${QUARTO_DIR}/quarto-1.5.53/bin/quarto"
+    
+
 else
     echo "-----> Downloading Quarto"
     #https://github.com/quarto-dev/quarto-cli/releases/download/v1.5.53/quarto-1.5.53-linux-amd64.deb 
