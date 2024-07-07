@@ -18,9 +18,9 @@ else
     echo "-----> Downloading Quarto"
     #https://github.com/quarto-dev/quarto-cli/releases/download/v1.5.53/quarto-1.5.53-linux-amd64.deb 
     #curl -fsSLO https://github.com/quarto-dev/quarto-cli/releases/download/v1.5.53/quarto-1.5.53-linux-amd64.tar.gz
-    curl -fsSLO ${QUARTO_URL}
+    curl -fsSLO "${QUARTO_URL}"
 
-    mv "${QUARTO_FILE}" "${CACHE_DIR}"/"${QUARTO_FILE}"
+    mv "${QUARTO_FILE}" "${CACHE_DIR}/${QUARTO_FILE}"
 
     # https://quarto.org/docs/download/tarball.html
     echo "-----> Extracting Quarto"
@@ -28,6 +28,6 @@ else
     mkdir -p "${QUARTO_DIR}"
     tar -C "${QUARTO_DIR}" -xvzf "${CACHE_DIR}/${QUARTO_FILE}"
 
-    chmod +x "${QUARTO_DIR}"/quarto-1.5.53/bin/quarto"
+    chmod +x "${QUARTO_DIR}/quarto-1.5.53/bin/quarto"
     
 fi
