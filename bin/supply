@@ -43,6 +43,8 @@ else
     chmod +x "${QUARTO_DIR}/quarto-1.5.53/bin/quarto"
 
     echo ${QUARTO_DIR}
+    echo ${BUILD_DIR}
+    
     export PATH=$PATH:/home/vcap/${QUARTO_DIR}/quarto-1.5.53/bin/
     #export PATH=$PATH:/home/vcap/deps/1/quarto/quarto-1.5.53/bin/
 
