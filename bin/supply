@@ -21,7 +21,7 @@ then
     echo "-----> Extracting Quarto"
     # Extract files in to directory a quarto directory
     mkdir -p "${QUARTO_DIR}"
-    tar -C "${QUARTO_DIR}" -xvzf "${CACHE_DIR}/${QUARTO_FILE}"
+    tar -C "${QUARTO_DIR}" -xzf "${CACHE_DIR}/${QUARTO_FILE}"
 
     chmod +x "${QUARTO_DIR}/quarto-1.5.53/bin/quarto"
     
@@ -41,7 +41,7 @@ else
     tar -C "${QUARTO_DIR}" -xvzf "${CACHE_DIR}/${QUARTO_FILE}"
 
     chmod +x "${QUARTO_DIR}/quarto-1.5.53/bin/quarto"
-    # export PATH=$PATH:"${QUARTO_DIR}/quarto-1.5.53/bin/"
+    export PATH=$PATH:home/${QUARTO_DIR}/quarto-1.5.53/bin/
 
     # Create symlink
     # ln -s "${QUARTO_DIR}/quarto-1.5.53/bin/" $PATH/quarto
