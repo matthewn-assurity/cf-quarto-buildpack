@@ -44,5 +44,5 @@ else
     # export PATH=$PATH:"${QUARTO_DIR}/quarto-1.5.53/bin/"
 
     # Create symlink
-    ln -s "${QUARTO_DIR}/quarto-1.5.53/bin/quarto" $PATH/quarto
+    ln -s "${QUARTO_DIR}/quarto-1.5.53/bin/" $PATH/quarto
 fi
