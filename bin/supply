@@ -41,5 +41,8 @@ else
     tar -C "${QUARTO_DIR}" -xvzf "${CACHE_DIR}/${QUARTO_FILE}"
 
     chmod +x "${QUARTO_DIR}/quarto-1.5.53/bin/quarto"
-    export PATH=$PATH:"${QUARTO_DIR}/quarto-1.5.53/bin/"
+    # export PATH=$PATH:"${QUARTO_DIR}/quarto-1.5.53/bin/"
+
+    # Create symlink
+    ln -s "${QUARTO_DIR}/quarto-1.5.53/bin/quarto" $PATH/quarto
 fi
